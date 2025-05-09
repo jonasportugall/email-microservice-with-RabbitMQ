@@ -18,6 +18,7 @@ Este microserviço é responsável por **consumir mensagens da fila RabbitMQ** e
 - PostgreSQL → SGBD  
 - CloudAMQP → instância em nuvem do RabbitMQ  
 - Maven → gerenciamento de dependências
+- •	Spring MAIL→Para trabalhar com protocolo de envio de email
 
 ---
 
@@ -49,5 +50,21 @@ Este microserviço é responsável por **consumir mensagens da fila RabbitMQ** e
 #Abra o projecto no seu IDE
 
 Em aplication properties, adicione e configure estas variaveis:
+
+server.port=8081 (aqui coloque a sua porta de preferência)
+spring.datasource.url=jdbc:postgresql://localhost:5432/NOME_DO_SEU_BANCO_DE_DADOS_DO_MICROSERVIÇO DE EMAIL
+spring.datasource.username=postgres   (coloque o username do seu postgres)
+spring.datasource.password=root       (coloque o a password do seu postgres)
+spring.jpa.hibernate.ddl-auto=update  
+
+spring.rabbitmq.addresses=URL_DO_RabbitMQ   (aqui adicione a url da fila do seu MabbitMq)
+broker.queue.email.name=default.email
+
+#FINALMENTE EXECUTE O PROJECTO.
+
+#DEPOIS VÁ PARA O MICROSERVIÇO DO USER, EXECUTE O PROJECTO E FAÇA UM TESTE APARTIR DO POSTMAN E OU INSOMNIA
+
+#Após excutar repare no terminal deste projecto e irá aparecer uma mensagem automaticamente, indicando que a comunicação foi bem sucedida
+
 
 
